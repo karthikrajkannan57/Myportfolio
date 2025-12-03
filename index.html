@@ -24,12 +24,17 @@
             </div>
 
             <ul class="nav-list" id="nav-list">
-                <li><a href="home"></a></li>
+                <li><a href="#home">Home</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#about">About Me</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <!-- JS feature 2: Dark Mode Toggle -->
-                <li><button id="theme-toggle" class="theme-btn">🌙</button></li>
+                <li>
+                    <div class="toggle-wrapper">
+                        <span class="toggle-label">Dark Mode</span>
+                        <button id="theme-toggle" class="theme-btn" aria-label="Switch Theme"></button>
+                    </div>
+                </li>
             </ul>    
         </nav>
 
@@ -44,37 +49,51 @@
 
         <!-- Project Section (Grid Layout) -->
         <section id="projects" class="container">
-            <h2 class="section-title">My projects</h2>
+            <h2 class="section-title">My Projects</h2>
+            
             <div class="project-grid">
-                <!-- Project 1 -->
+                
                 <div class="project-card">
-                    <div class="card-img" style="background-image: url('weatherapp.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="card-img" 
+                        role="img" 
+                        aria-label="Dashboard interface of a weather application showing sunny forecast and temperature"
+                        style="background-image: url('weatherapp.jpg'); background-size: cover; background-position: center;">
+                    </div>
                     <h3>Weather App</h3>
                     <p>A dashboard showing live weather data using an API.</p>
                     <a href="javascript:void(0)">View Code &rarr;</a>
                 </div>
-                <!-- Project 2 -->
+
                 <div class="project-card">
-                    <div class="card-img" style="background-image: url('taskmanager.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="card-img" 
+                        role="img" 
+                        aria-label="Task manager application showing a checklist of completed and pending tasks"
+                        style="background-image: url('taskmanager.jpg'); background-size: cover; background-position: center;">
+                    </div>
                     <h3>Task Manager</h3>
                     <p>A todo list app with local storage integration.</p>
                     <a href="javascript:void(0)">View Code &rarr;</a>
                 </div>
-                <!-- Project 3 -->
+
                 <div class="project-card">
-                   <div class="card-img" style="background-image: url('portfolio.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="card-img" 
+                        role="img" 
+                        aria-label="Screenshot of my previous personal portfolio website design"
+                        style="background-image: url('portfolio.jpg'); background-size: cover; background-position: center;">
+                    </div>
                     <h3>Portfolio v1</h3>
                     <p>My first attempt at a personal website.</p>
                     <a href="javascript:void(0)">View Code &rarr;</a>
                 </div>
-            </div>
+
+            </div> 
         </section>
 
         <!-- About Section -->
         <section id="about" class="container bg-light">
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
-                <p>I am a passionate developer focusing on clean, efficient code. I love solving problems and turning ideas into reality using HTML, CSS, and JavaScript.</p>
+                <p>I am an aspiring software developer currently pursuing a Bachelor of Computer Science in Multimedia Computing. My academic background has given me a unique perspective on technology, allowing me to blend technical logic with creative design. I specialize in building responsive, user-friendly websites using HTML, CSS, and JavaScript</p>
                 <div class="skills">
                     <span>HTML5</span>
                     <span>CSS3</span>
@@ -87,22 +106,46 @@
         <!-- Contact Section -->
         <section id="contact" class="container">
             <h2 class="section-title">Contact Me</h2>
-            <!-- JS Feature 3: Form Handling (Alert) -->
-            <form id="contact-form">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" required>
+    
+            <div class="contact-wrapper">
+                <div class="contact-intro">
+                    <p class="cta-text">
+                        I am currently open to internships and freelance opportunities. 
+                        Whether you have a question or just want to say hi, 
+                        <strong>let's work together!</strong>
+                    </p>
+            
+                    <div class="social-links">
+                        <a href="mailto:your.email@example.com" class="social-btn email">
+                            📧 Email Me
+                        </a>
+                        <a href="https://www.linkedin.com/in/lqmnfhmee/" target="_blank" class="social-btn linkedin">
+                            💼 LinkedIn
+                        </a>
+                        <a href="https://github.com" target="_blank" class="social-btn github">
+                            🐙 GitHub
+                        </a>
+                    </div>
+            
+                    <p class="separator">OR</p>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn">Send Message</button>
-            </form>
+                <!-- JS Feature 3: Form Handling (Alert) -->
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" required placeholder="What's your name?">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required placeholder="your.email@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="5" required placeholder="How can I help you?"></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
         </section>
 
         <footer>
@@ -112,5 +155,4 @@
         <script src="script.js"></script>
 
     </body>
-
 </html>
