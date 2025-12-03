@@ -12,18 +12,12 @@ menuToggle.addEventListener('click', () => {
 
 // FEATURE 2: Dark Mode Toggle
 const themeToggle = document.getElementById('theme-toggle');
+// Select the wrapper so clicking the text OR button works
+const toggleWrapper = document.querySelector('.toggle-wrapper'); 
 const body = document.body;
 
-themeToggle.addEventListener('click', () => {
-    // Toggle the 'dark-mode' class on the body
+toggleWrapper.addEventListener('click', () => {
     body.classList.toggle('dark-mode');
-    
-    // Change button text based on mode
-    if (body.classList.contains('dark-mode')) {
-        themeToggle.textContent = '☀️';
-    } else {
-        themeToggle.textContent = '🌙';
-    }
 });
 
 
