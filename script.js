@@ -1,12 +1,21 @@
 // FEATURE 1: Mobile Navigation Menu
-// Select HTML elements
 const menuToggle = document.getElementById('mobile-menu');
 const navList = document.getElementById('nav-list');
 
-// Add click event listener to hamburger button
+// 1. Toggle menu when hamburger icon is clicked
 menuToggle.addEventListener('click', () => {
-    // Toggle the 'active' class on the list to slide it in/out
     navList.classList.toggle('active');
+});
+
+// 2. CLOSE menu when a link is clicked 
+// Select all links inside the nav-list
+const navLinks = document.querySelectorAll('.nav-list a');
+
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        // Remove the 'active' class so the menu slides away
+        navList.classList.remove('active');
+    });
 });
 
 
@@ -37,3 +46,4 @@ form.addEventListener('submit', (e) => {
     
     form.reset(); // Clear the inputs
 });
+
